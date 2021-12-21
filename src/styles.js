@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
-  border: 1px solid hotpink;
   position: absolute;
   top: 0;
   bottom: 0;

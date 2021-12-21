@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react";
+import { data } from './data'
 import { ImQuotesLeft } from 'react-icons/im'
 import { FaTwitter, FaTumblr } from 'react-icons/fa'
 import {  Wrapper,
@@ -13,18 +13,31 @@ import {  Wrapper,
           NewQuote } from './styles'
 
 function App() {
+  const newQuote = () => {
+     const index = Math.floor(Math.random() * data.length);
+     return(data[index])
+  }
+  const [quote, setQuote] = useState(newQuote())
+
   return (
     <main>
       <Wrapper>
         <Container>
-          <Quote><ImQuotesLeft /> It’s not the years in your life that count. It’s the life in your years.</Quote>
-          <Author>- Abraham Lincoln</Author>
+          <Quote><ImQuotesLeft /> { quote.text }</Quote>
+          <Author>- { quote.author }</Author>
           <Buttons>
             <Share>
-              <Twitter className='btn btn-light'><FaTwitter /></Twitter>
-              <Tumblr className='btn btn-light'><FaTumblr /></Tumblr>
+              <Twitter 
+                className='btn btn-light'
+                href={`https://twitter.com/intent/tweet?text=${quote.text} -${quote.author}`}><FaTwitter />
+              </Twitter>
+              <Tumblr 
+                className='btn btn-light'
+                href={'https://www.tumblr.com/'}
+              ><FaTumblr />
+              </Tumblr>
             </Share>
-            <NewQuote className='btn btn-light'>New Quote</NewQuote>
+            <NewQuote className='btn btn-light' onClick={() => setQuote(newQuote())}>New Quote</NewQuote>
           </Buttons>
         </Container>
       </Wrapper>

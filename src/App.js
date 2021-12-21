@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { data } from './data'
 import { ImQuotesLeft } from 'react-icons/im'
 import { FaTwitter, FaTumblr } from 'react-icons/fa'

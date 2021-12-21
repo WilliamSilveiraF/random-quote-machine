@@ -1,8 +1,6 @@
-## React
-## React-Icons
-## Styled-Components
-## Bootstrap
+## Tools: React, Styled-Components and Bootstrap
+
 
 [Visit the project](https://williamsilveira-randomquotemachine.netlify.app/)
 
-![](readmegif.gif)
+![](readme.gif)
